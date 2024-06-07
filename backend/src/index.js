@@ -8,9 +8,9 @@ process.on('uncaughtException' , (err )=>{
 
 dotenv.config({path:'../config.env'});
 
-if (!process.env.PORT) {
-    throw new Error('Missing PORT in environment variables');
-}
+// if (!process.env.PORT) {
+//     throw new Error('Missing PORT in environment variables');
+// }
 
 const port =  process.env.PORT || 3005
 app.listen(port , ()=>{
