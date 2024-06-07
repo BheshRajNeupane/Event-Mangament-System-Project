@@ -10,7 +10,9 @@ import { NotFound } from "./error/route-not-found-error.js"
 
 const app = express();
 
+
 app.use(express.json({limit:'10kb'}));
+app.use(express.urlencoded({ extended: true })); 
 
 app.use(createRouter);
 app.use(showRouter);
