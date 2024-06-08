@@ -29,24 +29,22 @@ router.delete("/api/events/delete/:id", async (req, res, next) => {
 
     //copy the data to another file , to  prevent data loss
     createAndwrite(`${__dirname}/model/event-copy.json`, data);
+    createAndwrite(filePath, data);
 
-    if (!fs.existsSync(`${__dirname}/model/event-copy.json`)) {
-      createAndwrite(filePath, data);
-    } else {
-      createAndwrite(filePath, data);
-      //delete copy file
-
+    if (fs.existsSync(filePath)) {
+         //delete copy file
       fs.unlink(`${__dirname}/model/event-copy.json`, (err) => {
         if (err) {
           console.error("Error deleting the file:", err.message);
         }
         console.log("File deleted successfully");
       });
-    }
-
+    } 
+      
+  
     res.status(200).send({ message: "Event successfully delelte" });
   } catch (err) {
-    console.log("err", err.message);
+
     throw new FileError();
   }
 });
