@@ -2,8 +2,8 @@ import { AppError } from "./app-error.js "
 
 export class FileError extends AppError  {
     constructor () {
-               super('Something is wromg ');    
-               this.message=  ' Something is wromg';
+               super('Something is wrong ');    
+               this.message=  ' Something is wrong';
                this.statusCode = 500; 
 
     }

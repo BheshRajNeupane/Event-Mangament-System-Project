@@ -1,11 +1,16 @@
 import express from "express";
+//  import { promises as fs } from 'fs';
+  import   fs  from 'fs';
 import { body } from "express-validator";
 import {validateRequest }  from "../middleware/validate-request.js";
+import { FileError} from "../error/file-error.js"
 const router = express.Router();
-import fs from "fs"
+// import fs from "fs"
+
+
 import { __dirname} from "../app.js"
 
-import {  creatAndwrite} from "../utlis/fileWrite.js";
+import {  createAndwrite} from "../utlis/fileWrite.js";
 import {  appendData} from "../utlis/appendFile.js";
 
 router.post(
@@ -25,7 +30,7 @@ router.post(
     ],
     validateRequest,
   
-     async (req, res)=>{
+     async (req, res , next)=>{
      const filePath = `${__dirname}/model/event.json`;
 
         let event= {
@@ -38,16 +43,18 @@ router.post(
         }
 
 
-// Check if the file exists
-if (!fs.existsSync(filePath)) {
-  creatAndwrite(filePath,JSON.stringify([event]))
- } 
-else {
-  // File exists, read existing data, append new event, and rewrite the file
-  //   // Rewrite the file with the updated array
-  appendData(filePath,event)
-}
-
+      try{
+          if (!fs.existsSync(filePath)) {
+            await createAndwrite(filePath,[event])
+          } 
+          else {  
+          await  appendData(filePath,event)
+          }
+      }
+      catch(err){
+           throw new FileError()
+      }
+      
 res.status(201).send(event)
  
 })
