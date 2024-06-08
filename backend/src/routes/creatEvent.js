@@ -3,6 +3,7 @@ import express from "express";
   import   fs  from 'fs';
 import { body } from "express-validator";
 import {validateRequest }  from "../middleware/validate-request.js";
+import {createEventValidationRules }  from "../validator/create-event-rules.js";
 import { FileError} from "../error/file-error.js"
 const router = express.Router();
 // import fs from "fs"
@@ -15,31 +16,19 @@ import {  appendData} from "../utlis/appendFile.js";
 
 router.post(
     '/api/events/create/' , 
-    [
-      
-         body("title").exists().withMessage("Event must have title"),
-         body("discription").exists().withMessage("Event must have discription"),
-         body("total_no_of_paticipant").exists()
-            .isNumeric()
-            .withMessage(' must be a number'),
-        body('startDate').exists()
-         .withMessage("Event must have discription"),
-        body('endDate').exists()
-          .withMessage("Event must have discription")
-         
-    ],
+    createEventValidationRules ,
     validateRequest,
   
      async (req, res , next)=>{
      const filePath = `${__dirname}/model/event.json`;
-
+  
         let event= {
           id: Math.floor(Math.random() * 100),
           title:req.body.title,
-          discription:req.body.discription,
+          description:req.body.description,
           startDate:req.body.startDate,
           endDate:req.body.endDate,
-          total_no_of_paticipant:req.body.total_no_of_paticipant
+          total_no_of_participants:req.body.total_no_of_participants
         }
 
 

@@ -2,6 +2,7 @@ import express from "express";
 import { __dirname } from "../app.js";
 import { body } from "express-validator";
 import { validateRequest } from "../middleware/validate-request.js";
+import { updateEventValidationRules} from "../validator/update-event-rules.js";
 const router = express.Router();
 import { FileError } from "../error/file-error.js";
 import { NotFoundError } from "../error/not-found-error.js";
@@ -9,25 +10,7 @@ import { readFile } from "../utlis/readFile.js";
 import { createAndwrite } from "../utlis/fileWrite.js";
 router.patch(
   "/api/events/update/:id",
-  [
-    body("title").optional().notEmpty().withMessage("Title cannot be empty"),
-    body("description")
-      .optional()
-      .notEmpty()
-      .withMessage("Description cannot be empty"),
-    body("total_no_of_paticipant")
-      .optional()
-      .isNumeric()
-      .withMessage(" must be a number"),
-    body("startDate")
-      .optional()
-      .notEmpty()
-      .withMessage("Event must have discription"),
-    body("endDate")
-      .optional()
-      .notEmpty()
-      .withMessage("Event must have discription"),
-  ],
+ updateEventValidationRules,
   validateRequest,
 
   async (req, res, next) => {
@@ -46,16 +29,16 @@ router.patch(
         const updatedData = {
           id: parseInt(id),
           title: req.body.title || events[index].title,
-          discription: req.body.discription || events[index].discription,
+          description: req.body.description || events[index].description,
           startDate: req.body.startDate || events[index].startDate,
           endDate: req.body.endDate || events[index].endDate,
-          total_no_of_paticipant:
-            req.body.total_no_of_paticipant || events[index].total_no_of_paticipant,
+          total_no_of_participants:
+            req.body.total_no_of_participants || events[index].total_no_of_participants,
         };
   
         events[index] = { ...events[index], ...updatedData };
         await createAndwrite(filePath, events);
-        
+
         res.status(200).send(updatedData);
     } catch (err) {
       return next(new FileError());
