@@ -34,7 +34,7 @@ router.post(
      const filePath = `${__dirname}/model/event.json`;
 
         let event= {
-          id: Math.floor(Math.random() * 32),
+          id: Math.floor(Math.random() * 100),
           title:req.body.title,
           discription:req.body.discription,
           startDate:req.body.startDate,
