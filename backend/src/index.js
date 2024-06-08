@@ -13,7 +13,7 @@ dotenv.config({path:'../config.env'});
 // }
 
 const port =  process.env.PORT || 3005
-app.listen(port , ()=>{
+ const start =  async ()=>app.listen(port , ()=>{
     console.log(`Application running on port : ${port}`);
 })
 
@@ -23,3 +23,5 @@ process.on('unhandledRejection' , (err)=>{
         process.exit(1);
     })
 })
+
+start()
