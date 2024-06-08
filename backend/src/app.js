@@ -8,7 +8,7 @@ import { errorHandler} from "./middleware/error-handler.js";
 import { AppError } from "./error/app-error.js"
 import { NotFound } from "./error/route-not-found-error.js"
 import fs from "fs"
-//import path from "path"
+
 const router = express.Router();
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -16,7 +16,7 @@ import { fileURLToPath } from 'url';
 const app = express();
 
  export const __dirname = dirname(fileURLToPath(import.meta.url));
- 
+
 
 
 
