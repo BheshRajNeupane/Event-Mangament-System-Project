@@ -5,6 +5,7 @@ import { body } from "express-validator";
 import {validateRequest }  from "../middleware/validate-request.js";
 import {createEventValidationRules }  from "../validator/create-event-rules.js";
 import { FileError} from "../error/file-error.js"
+// import { NotAuthorizedError} from "../error/not-authorized-error.js"
 const router = express.Router();
 // import fs from "fs"
 
@@ -13,9 +14,13 @@ import { __dirname} from "../app.js"
 
 import {  createAndwrite} from "../utlis/fileWrite.js";
 import {  appendData} from "../utlis/appendFile.js";
+import { currentUser} from "../middleware/current-user.js";
+import {authGuard } from "../middleware/auth-guard.js";
 
 router.post(
     '/api/events/create/' , 
+    currentUser,
+    authGuard,
     createEventValidationRules ,
     validateRequest,
   

@@ -2,8 +2,8 @@ import { AppError } from "./app-error.js "
 
 export class BadRequestError extends AppError  {
     constructor () {
-               super('Email is already use ');    
-               this.message=  ' Email is already use';
+               super('Invalid credentials ');    
+               this.message=  ' Invalid credentials';
                this.statusCode = 400; 
 
     }
