@@ -6,10 +6,16 @@ import { FileError } from "../error/file-error.js";
 import { NotFoundError } from "../error/not-found-error.js";
 import { readFile } from "../utlis/readFile.js";
 import { createAndwrite } from "../utlis/fileWrite.js";
-// import { }
+import { currentUser} from "../middleware/current-user.js";
+import {authGuard } from "../middleware/auth-guard.js";
+
 const router = express.Router();
 
-router.delete("/api/events/delete/:id", async (req, res, next) => {
+router.delete(
+  "/api/events/delete/:id", 
+  currentUser,
+  authGuard,
+async (req, res, next) => {
   const filePath = `${__dirname}/model/event.json`;
 
   try {

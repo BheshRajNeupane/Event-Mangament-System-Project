@@ -5,9 +5,9 @@ export const authGuard = (
       res,
       next
 ) => {
-  
+    
   if (!req.currentUser) {
-     return  next(  new NotAuthorizedError())
+     return  next( new NotAuthorizedError())
   }
 
   next();

@@ -1,194 +1,26 @@
 [
   {
+    "id": 58,
+    "title": "IT Event",
+    "description": "Whether you are having a meeting, planning an event, setting up a conference, or need help promoting and marketing your convention, IT EVENTS can provide all necessary services.",
+    "startDate": "2021-05-3",
+    "endDate": "2021-5-9",
+    "total_no_of_participants": 12
+  },
+  {
+    "id": 10,
+    "title": "Welcome Event",
+    "description": "Effective welcome event management involves careful planning, attention to detail, and effective communication to create a memorable and positive first impression",
+    "startDate": "2024-06-10",
+    "endDate": "2021-5-13",
+    "total_no_of_participants": 12
+  },
+  {
     "id": 60,
-    "title": "Event updated test",
-    "description": "update..",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 33,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 64,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 58,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 53,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 68,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 78,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 54,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 9,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 50,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 19,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 90,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 96,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 58,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 58,
-    "title": "Sport  event",
-    "description": "hello... this is sport event",
-    "startDate": "2021-08-8",
-    "endDate": "2021-08-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 55,
-    "title": "Hacaktho",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-04-5",
-    "endDate": "2021-5-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 83,
-    "title": "hackathon",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-04-5",
-    "endDate": "2021-5-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 72,
-    "title": "IT Event",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-05-3",
-    "endDate": "2021-5-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 56,
-    "title": "IT Event",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-05-3",
-    "endDate": "2021-5-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 83,
-    "title": "IT Event",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-05-3",
-    "endDate": "2021-5-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 57,
-    "title": "IT Event",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-05-3",
-    "endDate": "2021-5-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 52,
-    "title": "IT Event",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-05-3",
-    "endDate": "2021-5-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 43,
-    "title": "IT Event",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-05-3",
-    "endDate": "2021-5-9",
-    "total_no_of_participants": 12
-  },
-  {
-    "id": 72,
-    "title": "IT Event",
-    "description": "hello... this is hackathon event",
-    "startDate": "2021-05-3",
-    "endDate": "2021-5-9",
+    "title": "Internship Guide Event",
+    "description": "We are looking for innovative, enthusiastic and hard working individuals who are eager to use technology for development.",
+    "startDate": "2024-07-1",
+    "endDate": "2021-07-3",
     "total_no_of_participants": 12
   }
 ]

@@ -8,8 +8,12 @@ import { FileError } from "../error/file-error.js";
 import { NotFoundError } from "../error/not-found-error.js";
 import { readFile } from "../utlis/readFile.js";
 import { createAndwrite } from "../utlis/fileWrite.js";
+import { currentUser} from "../middleware/current-user.js";
+import {authGuard } from "../middleware/auth-guard.js";
 router.patch(
   "/api/events/update/:id",
+  currentUser,
+  authGuard,
  updateEventValidationRules,
   validateRequest,
 

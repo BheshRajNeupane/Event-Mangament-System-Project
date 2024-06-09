@@ -5,10 +5,15 @@ import { __dirname} from "../app.js"
 import { readFile } from "../utlis/readFile.js";
 import {FileError} from '../error/file-error.js';
 import { FilterEventsClass} from "../utlis/filter-event.js"
+import { currentUser} from "../middleware/current-user.js";
+import {authGuard } from "../middleware/auth-guard.js";
+
 const router = express.Router();
 
 router.get(
     '/api/events/' , 
+    currentUser,
+    authGuard,
     async (req, res,next)=>{
 
         const filePath = `${__dirname}/model/event.json`;

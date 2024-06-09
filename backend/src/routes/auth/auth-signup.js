@@ -1,13 +1,11 @@
 import express from "express";
-//  import { promises as fs } from 'fs';
-  import   fs  from 'fs';
+import   fs  from 'fs';
 import { body } from "express-validator";
 import {validateRequest }  from "../../middleware/validate-request.js";
 import {signupValidationRules }  from "../../validator/signup-rules.js";
 import { FileError} from "../../error/file-error.js"
 import { readFile } from "../../utlis/readFile.js";
 import{ BadRequestError} from "../../error/bad-req-error.js"
-// import fs from "fs"
 import { __dirname} from "../../app.js"
 import {  createAndwrite} from "../../utlis/fileWrite.js";
 import {  appendData} from "../../utlis/appendFile.js";
@@ -28,6 +26,7 @@ router.post(
           email: req.body.email,
           password:  await new Password().toHash(req.body.password)
         }
+
         
     try{
         if (!fs.existsSync(filePath)) {
@@ -61,16 +60,11 @@ router.post(
     req.session = {
       jwt: userJwt,
     };
-
-  
-
-            res.status(201).send(data);
-
-  }
-    
-
  
- )
+
+       res.status(201).send(data);
+
+  })
     
 
 

@@ -18,6 +18,7 @@ export  class Password {
   }
 
    async compare(storedPassword, suppliedPassword) {
+     
     const [hashedPassword, salt] = storedPassword.split(".");
     const buf = await scryptAsync(suppliedPassword, salt, 64);
 
@@ -25,12 +26,6 @@ export  class Password {
   }
 }
 
-//  export const hashedPassword =  async (password)=>{
-//   try {
-//     return   ( await  new Password().toHash(password))
-//   }catch(errr){
-//     }
 
-// }
   
 

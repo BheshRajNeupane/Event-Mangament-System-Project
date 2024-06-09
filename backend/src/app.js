@@ -10,6 +10,7 @@ import { NotFound } from "./error/route-not-found-error.js"
 import fs from "fs"
 import { signupRouter} from "./routes/auth/auth-signup.js"
 import { signinRouter} from "./routes/auth/auth-signin.js"
+import { signoutRouter} from "./routes/auth/auth-signout.js"
 import cookieSession from "cookie-session";
 const router = express.Router();
 import { dirname } from 'path';
@@ -36,6 +37,7 @@ app.use(
 //Auth Route
  app.use(signupRouter);
  app.use(signinRouter);
+ app.use(signoutRouter);
 
 //Event Route
 app.use(createRouter);
