@@ -5,7 +5,7 @@ import {validateRequest }  from "../../middleware/validate-request.js";
 import {signupValidationRules }  from "../../validator/signup-rules.js";
 import { FileError} from "../../error/file-error.js"
 import { readFile } from "../../utlis/readFile.js";
-import{ BadRequestError} from "../../error/bad-req-error.js"
+import{ AlreadyExist} from "../../error/already-exist-error.js"
 import { __dirname} from "../../app.js"
 import {  createAndwrite} from "../../utlis/fileWrite.js";
 import {  appendData} from "../../utlis/appendFile.js";
@@ -20,7 +20,6 @@ router.post(
     async(req, res , next)=>{
         const filePath = `${__dirname}/model/user.json`;
   
-         
         const data ={
           id: Math.floor( (Math.random()*50)),
           email: req.body.email,
@@ -37,7 +36,7 @@ router.post(
             const Users =  await readFile(filePath)
             const existingUser =  await Users.find((user) => user.email== data.email);
             if(existingUser){
-              return next( new BadRequestError())
+              return next( new AlreadyExist())
             }
             await  appendData(filePath,data)
    
