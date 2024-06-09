@@ -12,7 +12,7 @@ import { __dirname} from "../../app.js"
 import {  createAndwrite} from "../../utlis/fileWrite.js";
 import {  appendData} from "../../utlis/appendFile.js";
 import { Password } from "../../utlis/password.js";
-
+import  jwt from "jsonwebtoken"
 const router = express.Router();
 
 router.post(
@@ -43,14 +43,31 @@ router.post(
             await  appendData(filePath,data)
    
         }
+      }
+      catch(err){
+           throw new FileError()
+          }
+
+         // Generate JWT
+    const userJwt = jwt.sign(
+      {
+        id: data.id,
+        email: data.email,
+      },
+     process.env.JWT_KEY|| "my-key",{ expiresIn:process.env.expiresIn || '1h' }
+    );
+
+    // Store it on session object
+    req.session = {
+      jwt: userJwt,
+    };
+
+  
 
             res.status(201).send(data);
 
-}
-catch(err){
-     throw new FileError()
-}
-    }
+  }
+    
 
  
  )

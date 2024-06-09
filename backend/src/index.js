@@ -1,12 +1,13 @@
 import { app }  from "./app.js";
 import  dotenv from 'dotenv';
+// import
 
 process.on('uncaughtException' , (err )=>{
     console.log(` ReferenceError : ${err.name , err.message}\n`);
    process.exit(1);
 })
 
-dotenv.config({path:'../config.env'});
+dotenv.config({ path:'../config.env' });
 
 // if (!process.env.PORT) {
 //     throw new Error('Missing PORT in environment variables');
