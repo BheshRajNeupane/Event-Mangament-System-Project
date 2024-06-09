@@ -4,6 +4,7 @@ import { promises as fs } from 'fs';
 import { __dirname} from "../app.js"
 import { readFile } from "../utlis/readFile.js";
 import {FileError} from '../error/file-error.js';
+import { FilterEventsClass} from "../utlis/filter-event.js"
 const router = express.Router();
 
 router.get(
@@ -13,8 +14,14 @@ router.get(
         const filePath = `${__dirname}/model/event.json`;
     
     try {
-            const events = await readFile(filePath)
+
+        let events = await readFile(filePath)
+           events = new FilterEventsClass(events, req. query)
+                   .filter()
+                   .getFilteredEvents();
+  
             res.status(200).json(events);
+
     } catch (error) {
             return next(new FileError());
   }
