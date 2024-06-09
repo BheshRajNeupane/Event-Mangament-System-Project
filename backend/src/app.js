@@ -8,6 +8,7 @@ import { errorHandler} from "./middleware/error-handler.js";
 import { AppError } from "./error/app-error.js"
 import { NotFound } from "./error/route-not-found-error.js"
 import fs from "fs"
+import { signupRouter} from "./routes/auth/auth-signup.js"
 
 const router = express.Router();
 import { dirname } from 'path';
@@ -26,6 +27,10 @@ const app = express();
 app.use(express.json({limit:'10kb'}));
 app.use(express.urlencoded({ extended: true })); 
 
+//Auth Route
+ app.use(signupRouter);
+
+//Event Route
 app.use(createRouter);
 app.use(showRouter);
 app.use(updateRouter );
