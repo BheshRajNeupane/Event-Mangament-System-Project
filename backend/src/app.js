@@ -18,12 +18,9 @@ import { fileURLToPath } from 'url';
 
 const app = express();
 
- export const __dirname = dirname(fileURLToPath(import.meta.url));
-
-
-
-
-
+   const __dirname = dirname(fileURLToPath(import.meta.url));
+// const __filename = fileURLToPath(import.meta.url);
+//  const __dirname = dirname(__filename);
 
 
 app.use(express.json({limit:'10kb'}));
@@ -55,7 +52,7 @@ app.use((err, req,res ,next)=>{
 
 
 
-export  {app}
+export  {app , __dirname}
 
 
 
