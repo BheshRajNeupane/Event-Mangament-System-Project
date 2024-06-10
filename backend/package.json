@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": " jest"
+    "test": "jest "
   },
    
     "plugins": [

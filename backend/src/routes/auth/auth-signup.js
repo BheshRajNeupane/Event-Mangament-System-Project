@@ -11,6 +11,8 @@ import {  createAndwrite} from "../../utlis/fileWrite.js";
 import {  appendData} from "../../utlis/appendFile.js";
 import { Password } from "../../utlis/password.js";
 import  jwt from "jsonwebtoken"
+
+
 const router = express.Router();
 
 router.post(
@@ -18,7 +20,9 @@ router.post(
     signupValidationRules, 
     validateRequest,
     async(req, res , next)=>{
-        const filePath = `${__dirname}/model/user.json`;
+        const filePath = `${__dirname}/model/fake_user.json`;
+        // const filePath = `${__dirname}/model/user.json`;
+        
   
         const data ={
           id: Math.floor( (Math.random()*50)),

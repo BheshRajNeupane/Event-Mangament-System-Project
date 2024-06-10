@@ -17,7 +17,8 @@ router.post(
     signinValidationRules, 
     validateRequest,
     async(req, res , next)=>{
-        const filePath = `${__dirname}/model/user.json`;
+        const filePath = `${__dirname}/model/fake_user.json`;
+        // const filePath = `${__dirname}/model/user.json`;
    
         const { email, password } = req.body;
        
