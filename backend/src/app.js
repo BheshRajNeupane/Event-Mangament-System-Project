@@ -14,15 +14,26 @@ import { signoutRouter} from "./routes/auth/auth-signout.js"
 import cookieSession from "cookie-session";
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-
+import  cors   from  "cors";
 const router = express.Router();
 
 const app = express();
 
+app.use(cors());
    const __dirname = dirname(fileURLToPath(import.meta.url));
 // const __filename = fileURLToPath(import.meta.url);
 //  const __dirname = dirname(__filename);
+// app.use(express.static(path.join(__dirname, '../../front-end')));
 
+// Define a route to handle root requests
+app.post(' /api/events/users/signup/', (req, res) => {
+    // Send an HTML file as the response
+    const data = { message: 'Hello from the backend!' };
+    
+    // Send the data as JSON response
+    res.send(data);
+    // res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.use(express.json({limit:'10kb'}));
 app.use(express.urlencoded({ extended: true })); 
@@ -42,6 +53,9 @@ app.use(createRouter);
 app.use(showRouter);
 app.use(updateRouter );
 app.use(deleteRouter);
+
+
+
 
 app.all("*",  (req, res , next) => {
   next( new NotFound())
