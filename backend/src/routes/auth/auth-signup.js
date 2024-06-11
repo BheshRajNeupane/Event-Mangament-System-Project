@@ -20,8 +20,9 @@ router.post(
     signupValidationRules, 
     validateRequest,
     async(req, res , next)=>{
-        const filePath = `${__dirname}/model/fake_user.json`;
-        // const filePath = `${__dirname}/model/user.json`;
+      
+      const filePath = `${__dirname}/model/user.json`;
+         //  const filePath = `${__dirname}/model/__test__/fake_event.json`;
         
   
         const data ={
@@ -29,7 +30,6 @@ router.post(
           email: req.body.email,
           password:  await new Password().toHash(req.body.password)
         }
-  console.log("dffffffffffffffff");
         
     try{
         if (!fs.existsSync(filePath)) {
@@ -39,15 +39,17 @@ router.post(
    
             const Users =  await readFile(filePath)
             const existingUser =  await Users.find((user) => user.email== data.email);
+
             if(existingUser){
               return next( new AlreadyExist())
             }
+
             await  appendData(filePath,data)
    
         }
       }
       catch(err){
-           throw new FileError()
+          return   next( new FileError())
           }
 
          // Generate JWT

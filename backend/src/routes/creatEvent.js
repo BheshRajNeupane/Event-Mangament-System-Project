@@ -19,14 +19,15 @@ import {authGuard } from "../middleware/auth-guard.js";
 
 router.post(
     '/api/events/create/' , 
-    // currentUser,
-    // authGuard,
+    currentUser,
+    authGuard,
     createEventValidationRules ,
     validateRequest,
   
      async (req, res , next)=>{
-     const filePath = `${__dirname}/model/fake_event.json`;
-    //  const filePath = `${__dirname}/model/event.json`;
+
+         const filePath = `${__dirname}/model/event.json`;
+    //  const filePath = `${__dirname}/model/__test__/fake_event.json`;
   
         let event= {
           id: Math.floor(Math.random() * 100),
@@ -39,18 +40,18 @@ router.post(
 
 
       try{
-          if (!fs.existsSync(filePath)) {
-            await createAndwrite(filePath,[event])
-          } 
-          else {  
-          await  appendData(filePath,event)
-          }
+             if (!fs.existsSync(filePath)) {
+                    await createAndwrite(filePath,[event])
+                } 
+             else {  
+                    await  appendData(filePath,event)
+                 }
       }
       catch(err){
-           throw new FileError()
-      }
+           return next(new FileError())
+       }
       
-res.status(201).send(event)
+  res.status(201).send(event)
  
 })
 
