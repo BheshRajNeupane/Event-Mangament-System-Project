@@ -1,5 +1,4 @@
 
-
 export  const errorHandler = (
     err,
     req,
@@ -8,7 +7,7 @@ export  const errorHandler = (
   ) => {
 
     const errorStatus = err.statusCode || 500;
-    const errorMessage = err.message || 'Something went wrong, Try again!';
+    const errorMessage = err.message || 'Internal Server Error!';
    
     return res.status(errorStatus).json({
       status: errorStatus,

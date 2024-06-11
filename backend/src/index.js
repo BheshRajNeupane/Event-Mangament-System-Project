@@ -1,6 +1,6 @@
 import { app }  from "./app.js";
 import  dotenv from 'dotenv';
-// import
+
 
 process.on('uncaughtException' , (err )=>{
     console.log(` ReferenceError : ${err.name , err.message}\n`);

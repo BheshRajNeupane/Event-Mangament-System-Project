@@ -1,20 +1,21 @@
 import express from "express";
 import bodyparser from "body-parser";
+import fs from "fs"
 import { createRouter } from "./routes/creatEvent.js";
 import { showRouter } from "./routes/showAllEvent.js";
 import { updateRouter } from "./routes/updateEvent.js";
 import { deleteRouter } from "./routes/deleteEvent.js";;
-import { errorHandler} from "./middleware/error-handler.js";
 import { AppError } from "./error/app-error.js"
+import { errorHandler} from "./middleware/error-handler.js";
 import { NotFound } from "./error/route-not-found-error.js"
-import fs from "fs"
-import { signupRouter} from "./routes/auth/auth-signup.js"
 import { signinRouter} from "./routes/auth/auth-signin.js"
+import { signupRouter} from "./routes/auth/auth-signup.js"
 import { signoutRouter} from "./routes/auth/auth-signout.js"
 import cookieSession from "cookie-session";
-const router = express.Router();
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+
+const router = express.Router();
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.all("*",  (req, res , next) => {
   next( new NotFound())
   });
 
+//GLOBAL ERRORHANDLER
 app.use((err, req,res ,next)=>{
     errorHandler(err,req,res,next);
 });

@@ -4,9 +4,6 @@ import { promisify } from "util";
 const scryptAsync = promisify(crypto.scrypt);
 const randomBytesAsync = promisify(crypto.randomBytes);
 
-
-//const scryptAsync = promisify(scrypt);
-
 export  class Password {
 
    async toHash(password) {
