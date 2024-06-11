@@ -29,7 +29,7 @@ router.post(
           email: req.body.email,
           password:  await new Password().toHash(req.body.password)
         }
-
+  console.log("dffffffffffffffff");
         
     try{
         if (!fs.existsSync(filePath)) {

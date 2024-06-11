@@ -19,13 +19,14 @@ import {authGuard } from "../middleware/auth-guard.js";
 
 router.post(
     '/api/events/create/' , 
-    currentUser,
-    authGuard,
+    // currentUser,
+    // authGuard,
     createEventValidationRules ,
     validateRequest,
   
      async (req, res , next)=>{
-     const filePath = `${__dirname}/model/event.json`;
+     const filePath = `${__dirname}/model/fake_event.json`;
+    //  const filePath = `${__dirname}/model/event.json`;
   
         let event= {
           id: Math.floor(Math.random() * 100),

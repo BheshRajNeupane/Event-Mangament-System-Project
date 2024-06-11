@@ -13,10 +13,11 @@ const router = express.Router();
 
 router.delete(
   "/api/events/delete/:id", 
-  currentUser,
-  authGuard,
+  // currentUser,
+  // authGuard,
 async (req, res, next) => {
-  const filePath = `${__dirname}/model/event.json`;
+  // const filePath = `${__dirname}/model/event.json`;
+  const filePath = `${__dirname}/model/fake_event.json`;
 
   try {
     const { id } = req.params;
@@ -26,12 +27,12 @@ async (req, res, next) => {
       return next(new NotFoundError()); //empty
     }
 
-    const item = events.find((item) => item.id == id);
+    const event = events.find((event) => event.id == id);
 
-    if (!item) {
+    if (!event) {
       return next(new NotFoundError()); //  data not found
     }
-    const data = events.filter((item) => item.id != id);
+    const data = events.filter((event) => event.id != id);
 
     //copy the data to another file , to  prevent data loss
     createAndwrite(`${__dirname}/model/event-copy.json`, data);
@@ -47,11 +48,10 @@ async (req, res, next) => {
       });
     } 
       
-  
     res.status(200).send({ message: "Event successfully delelte" });
   } catch (err) {
 
-    throw new FileError();
+     return next( new FileError());
   }
 });
 export { router as deleteRouter };

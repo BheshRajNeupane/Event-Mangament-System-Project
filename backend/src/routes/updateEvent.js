@@ -12,13 +12,14 @@ import { currentUser} from "../middleware/current-user.js";
 import {authGuard } from "../middleware/auth-guard.js";
 router.patch(
   "/api/events/update/:id",
-  currentUser,
-  authGuard,
+  // currentUser,
+  // authGuard,
  updateEventValidationRules,
   validateRequest,
 
   async (req, res, next) => {
-    const filePath = `${__dirname}/model/event.json`;
+    // const filePath = `${__dirname}/model/event.json`;
+    const filePath = `${__dirname}/model/fake_event.json`;
     try {
         const { id } = req.params;
         const events = await readFile(filePath);

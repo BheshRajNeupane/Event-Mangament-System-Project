@@ -12,11 +12,12 @@ const router = express.Router();
 
 router.get(
     '/api/events/' , 
-    currentUser,
-    authGuard,
+    // currentUser,
+    // authGuard,
     async (req, res,next)=>{
 
-        const filePath = `${__dirname}/model/event.json`;
+        // const filePath = `${__dirname}/model/event.json`;
+        const filePath = `${__dirname}/model/fake_event.json`;
     
     try {
 
