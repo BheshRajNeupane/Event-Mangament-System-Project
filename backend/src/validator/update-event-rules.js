@@ -3,6 +3,7 @@
 
 
 export  const updateEventValidationRules =
+
      [
       body("title").optional().notEmpty().withMessage("Title cannot be empty"),
       body("description")

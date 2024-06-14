@@ -1,0 +1,289 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Home Page</title>
+    
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+  /* Simple styling for the form */
+   body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: #f0f0f0;
+        } 
+
+header {
+    background-color:rgba(0, 42, 255, 0.68);
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+ 
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+  
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    background-color: #fff;
+    height:100%;
+     
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+footer p{
+    text-align: center;
+    padding: 10px 0;
+    background-color: #5cb85c;
+    color: red;
+}
+
+</style>
+<body>
+    <header>
+        <h1></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+        
+                <li><a href="http://127.0.0.1:5500/front-end/auth/signup.html">Signup</a></li>
+                
+                <li><a href="http://127.0.0.1:5500/front-end/auth/signin.html">Signin</a></li>
+              
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About</h2>
+            <p>
+                
+            </p> -->
+        <!-- </section>
+        <section>
+            <h2>Our Services</h2>
+            <p>We offer a range of services to meet your needs. Explore our services to find out more about what we can do for you.</p>
+            <li>You can sign up</li>
+            <li>You can sign in</li>
+            <li>You can sign create event , which is saved on event.json file</li>
+            <li>You can  read/show event</li>
+            <li>You can  filter event based on title , startDate and endDate</li>
+            <li>You can update event  </li>
+            <li>You can delete event  </li>
+
+            <h2>Slient Feature</h2>
+            <li>Json Web Token(jwt) is used to authenticate  , user email and  hashed password is saved on user.json file</li>
+            <li> Testing of services are done </li>
+            <li>Proper Error Handling</li>
+            <li> used sperate Error Class to all possible error</li>
+            <li>Validation Rules are  defined  for signin ,signup , create-event and update event.</li>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #002aff;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 0.5em;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main section {
+            margin-bottom: 20px;
+        }
+
+        main section h2 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #002aff;
+        }
+
+        main section p,
+        main section ul {
+            font-size: 1em;
+            color: #666;
+        }
+
+        main section ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        main section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #5cb85c;
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            height: 20 vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Event Management Application </h1>
+        <nav>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#services"> Our Services</a></li>
+                <li><a href="#features"> Key Features</a></li>
+        
+                <li><a href="http://127.0.0.1:5500/front-end/auth/signup.html">Signup</a></li>
+                
+                <li><a href="http://127.0.0.1:5500/front-end/auth/signin.html">Signin</a></li>
+              
+                <!-- <li><a href="http://127.0.0.1:5500/front-end/Events/create.html">Create</a></li>
+                <li><a href="http://127.0.0.1:5500/front-end/Events/show_filter.html">Show and Filter</a></li>
+                <li><a href="http://127.0.0.1:5500/front-end/Events/update.html">Update</a></li>
+                <li><a href="http://127.0.0.1:5500/front-end/Events/delete.html">Delete</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+           
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>We provide a comprehensive suite of services designed to meet your needs. Explore our offerings to discover how we can assist you:</p>
+                <li><strong>User Registration</strong>: Easily sign up to become a member of our platform.</li>
+                <li><strong>User Login</strong>: Securely sign in to access your  events management service.</li>
+                <li><strong>Event Creation</strong>: Create new events that are stored in the  events.json  file.</li>
+                <li><strong>Event Viewing</strong>: Access and view detailed information about your events.</li>
+                <li><strong>Event Filtering</strong>: Filter events by title, start date, or end date for easy          navigation.</li>
+                <li><strong>Event Updates</strong>: Modify and update your events as needed.</li>
+                <li><strong>Event Deletion</strong>: Remove events that are no longer required.</li>
+    
+        </section>
+        <section id = "features">
+            <h2>Key Features</h2>
+
+                <li><strong>Secure Authentication</strong>: We use JSON Web Tokens (JWT) for secure authentication. User emails and hashed passwords are safely stored in the users.json file.</li>
+                <li><strong>Through Testing</strong>: All services undergo rigorous testing to ensure reliability and performance.</li>
+                <li><strong>Robust Error Handling</strong>: We implement comprehensive error handling to manage potential issues effectively.</li>
+                <li><strong>Custom Error Classes </strong>:   We use specific error classes to address all         possible errors, ensuring clear and precise error management.</li>
+                <li><strong>Validation Rules</strong>: We enforce stringent validation rules for signing up, signing in, creating events, and updating events to maintain data integrity.</li>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <p>Empowering Your Vision, One Step at a Time.</p>
+        <p>Bhesh Raj Neupane</p>
+    </footer>
+</body>
+</html>

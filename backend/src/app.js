@@ -11,40 +11,43 @@ import { NotFound } from "./error/route-not-found-error.js"
 import { signinRouter} from "./routes/auth/auth-signin.js"
 import { signupRouter} from "./routes/auth/auth-signup.js"
 import { signoutRouter} from "./routes/auth/auth-signout.js"
-import cookieSession from "cookie-session";
-import { dirname } from 'path';
+import session from "express-session";
+import path , { dirname } from 'path';
+import cors from  "cors";
 import { fileURLToPath } from 'url';
-import  cors   from  "cors";
 const router = express.Router();
 
-const router = express.Router();
+
 
 const app = express();
 
-app.use(cors());
-   const __dirname = dirname(fileURLToPath(import.meta.url));
-// const __filename = fileURLToPath(import.meta.url);
-//  const __dirname = dirname(__filename);
-// app.use(express.static(path.join(__dirname, '../../front-end')));
+app.use(cors({
+  origin: 'http://127.0.0.1:5500', // frontend URL
+  credentials: true // Allow cookies to be sent with requests
+}));
 
-// Define a route to handle root requests
-app.post(' /api/events/users/signup/', (req, res) => {
-    // Send an HTML file as the response
-    const data = { message: 'Hello from the backend!' };
-    
-    // Send the data as JSON response
-    res.send(data);
-    // res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+   const __dirname = dirname(fileURLToPath(import.meta.url));
+
+app.use(express.static(path.join( __dirname, './../frontend' , 'home.html')))
 
 app.use(express.json({limit:'10kb'}));
 app.use(express.urlencoded({ extended: true })); 
-app.use(
-  cookieSession({
+app.use(session({
     signed: false,
-  maxAge: 24 * 60 * 60 * 1000 
+    maxAge: 24 * 60 * 60 * 1000 ,
+    secret:  process.env.SECRET||'my-secret-key',
+    httpOnly: true,
+    secure: false 
+
   })
 );
+
+
+app.get('/', (req, res) => {
+  res.sendFile((path.join( __dirname, './../../front-end' , './home.html')));
+
+});
+
 //Auth Route
  app.use(signupRouter);
  app.use(signinRouter);
@@ -57,8 +60,6 @@ app.use(updateRouter );
 app.use(deleteRouter);
 
 
-
-
 app.all("*",  (req, res , next) => {
   next( new NotFound())
   });
@@ -67,7 +68,6 @@ app.all("*",  (req, res , next) => {
 app.use((err, req,res ,next)=>{
     errorHandler(err,req,res,next);
 });
-
 
 
 export  {app , __dirname}

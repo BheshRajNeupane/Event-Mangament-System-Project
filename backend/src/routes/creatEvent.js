@@ -25,10 +25,11 @@ router.post(
     validateRequest,
   
      async (req, res , next)=>{
-
+   
          const filePath = `${__dirname}/model/event.json`;
-    //  const filePath = `${__dirname}/model/__test__/fake_event.json`;
-  
+         //TEST FILE
+       //  const filePath = `${__dirname}/model/__test__/fake_event.json`;
+
         let event= {
           id: Math.floor(Math.random() * 100),
           title:req.body.title,

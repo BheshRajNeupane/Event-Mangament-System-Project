@@ -5,7 +5,7 @@ export const createAndwrite =  async ( filePath,event) =>
      {
             fs.writeFile(filePath, JSON.stringify(event), 'utf8', (err) => {
                 if (err) {
-                    throw  new FileError() 
+                    throw new FileError() 
                 }
             
             })

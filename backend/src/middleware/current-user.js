@@ -1,8 +1,10 @@
 import jwt from "jsonwebtoken";
 
 export const currentUser = (req, res, next) => {
-  if (!req.session) {
-    return next(); //   pass    -->  auth -guard
+   console.log( req.session);
+
+  if (!req.session || !req.session.jwt) {
+   return next(); //   pass    -->  auth -guard
   }
 
   try {

@@ -17,25 +17,30 @@ document.addEventListener('DOMContentLoaded', () => {
     
         try {
             // Send a POST request using Fetch API
-            const response = await fetch("http://127.0.0.1:3005/api/events/users/signup/", {
+            const response = await fetch("http://127.0.0.1:3005/api/events/users/signin/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
             });
-            
-            // Check if the response status is not OK
-        
-            if(response.ok){
-                alert("Sucess..!")
-                window.location.href = "http://127.0.0.1:5500/test.html"
-            }
          
-            // Parse the JSON response
-            const responseData =  await response.json();
-
           
+            const res  = await response.json()
+      console.log(res);
+            // Check if the response status is not OK
+            if(!response.ok){
+            
+                alert(res.message)
+                return new Error(res.message)
+            }
+            localStorage.setItem('authToken', res.token);
+            window.location.href = "http://127.0.0.1:5500/front-end/panel.html"
+
+            // Parse the JSON response
+            // const responseData =  await response.json();
+            // console.log(responseData);
+            // alert(responseData);    
 
         } catch (error) {
     

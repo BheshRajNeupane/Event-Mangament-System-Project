@@ -8,3 +8,13 @@ export class FileError extends AppError  {
 
     }
 }
+// Handle the case where the file does not exist
+ // At first : if you try to update event before creat event --> event.json file doesn't exist 
+export class FileNotExist extends AppError  {
+    constructor () {
+               super('File doesnot exist  ');    
+               this.message=  ' File doesnot exist ';
+               this.statusCode =404 ; 
+
+    }
+}

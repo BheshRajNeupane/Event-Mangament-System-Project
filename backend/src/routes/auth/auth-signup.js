@@ -22,6 +22,7 @@ router.post(
     async(req, res , next)=>{
       
       const filePath = `${__dirname}/model/user.json`;
+         //TEST FILE
          //  const filePath = `${__dirname}/model/__test__/fake_event.json`;
         
   
@@ -62,10 +63,9 @@ router.post(
     );
 
     // Store it on session object
-    req.session = {
-      jwt: userJwt,
-    };
- 
+    req.session.jwt = userJwt
+    
+
 
        res.status(201).send(data);
 

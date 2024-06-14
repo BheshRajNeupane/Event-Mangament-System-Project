@@ -1,1 +1,18 @@
-[{"id":58,"title":"IT Event","description":"Whether you are having a meeting, planning an event, setting up a conference, or need help promoting and marketing your convention, IT EVENTS can provide all necessary services.","startDate":"2021-05-3","endDate":"2021-5-9","total_no_of_participants":12},{"id":10,"title":"Welcome Event","description":"Effective welcome event management involves careful planning, attention to detail, and effective communication to create a memorable and positive first impression","startDate":"2024-06-10","endDate":"2021-5-13","total_no_of_participants":12},{"id":65,"title":"YoungInnovatives Summit","description":"YoungInnovative description updated1..","startDate":"2024-09-1","endDate":"2021-03-3","total_no_of_participants":1200}]
+[
+  {
+    "id": 21,
+    "title": "Himalaya it collge coding challange",
+    "description": "Helping you become a better software engineer through coding challenges that build real applications.",
+    "startDate": "2024-09-1",
+    "endDate": "2021-03-3",
+    "total_no_of_participants": 1200
+  },
+  {
+    "id": 49,
+    "title": "Young Innovations Internship Event",
+    "description": "Through a variety of internships, our interns have the opportunity to further their careers, work alongside of experts in their fields, and receive mentoring and professional development throughout the whole process. The projects you’ll work on aren’t busy-work; they’re videos, campaigns, and projects that are launching in a few days or months, and have the chance to make a real impact on people’s lives.",
+    "startDate": "2024-06-13",
+    "endDate": "2024-06-20",
+    "total_no_of_participants": "1000"
+  }
+]

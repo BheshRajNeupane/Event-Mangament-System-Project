@@ -3,7 +3,7 @@ import { app } from "../../app.js";
 
 //*******CREATE EVENT TEST WITHOUT AUTHENTICAION************* */
 
-it("returns an error if  user ty to create empty event", async () => {
+it("returns an error if  user try to create empty event", async () => {
   await request(app)
   .post('/api/events/create/')
   .send({})

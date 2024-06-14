@@ -19,7 +19,8 @@ router.post(
     async(req, res , next)=>{
 
       const filePath = `${__dirname}/model/user.json`;
-         //  const filePath = `${__dirname}/model/__test__/fake_event.json`;
+       //TEST FILE  
+      //  const filePath = `${__dirname}/model/__test__/fake_event.json`;
    
         const { email, password } = req.body;
        
@@ -35,22 +36,19 @@ router.post(
         
 
          // Generate JWT
-    const userJwt = jwt.sign(
-      {
-        id: existingUser.id,
-        email: existingUser.email,
-      },
-     process.env.JWT_KEY|| "my-key",{ expiresIn:process.env.expiresIn || '1h' }
-    );
+      const userJwt = jwt.sign(
+             {
+              id: existingUser.id,
+              email: existingUser.email,
+            },
+            process.env.JWT_KEY|| "my-key",{ expiresIn:process.env.expiresIn || '1h' }
+          );
 
     // Store it on session object
-    req.session = {
-      jwt: userJwt,
-    };
+    req.session.jwt=  userJwt
 
-  
-
-            res.status(201).send(existingUser);
+        
+      res.status(201).send(existingUser )
 
   }
     
