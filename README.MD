@@ -286,4 +286,7 @@ Tests the system's response to duplicate or invalid signup attempts.
 Tests how the system handles invalid update data requests.
 
 ### Some screenshots shots (See screenshots of all  working functionalities of this project  in Screenshots Directory  )
-
+Home page
+![](..%5CScreenshot%20-%20Copy%5Chomepage.jpg)
+panel page
+![](..%5CScreenshot%20-%20Copy%5Cpanelpage.jpg)
