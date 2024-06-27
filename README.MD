@@ -287,7 +287,22 @@ Tests the system's response to duplicate or invalid signup attempts.
 Tests how the system handles invalid update data requests.
 
 ### Some screenshots shots (See screenshots of all  working functionalities of this project  in Screenshots Directory  )
-Home page
-![](..%5CScreenshot%20-%20Copy%5Chomepage.jpg)
-panel page
-![](..%5CScreenshot%20-%20Copy%5Cpanelpage.jpg)
+
+
+### Homepage
+![Homepage](screenshots%5Chomepage.jpg)
+### Panel Page
+![Panel Page](screenshots%5Cpanelpage.jpg)
+### Signup Success
+![Signup Success](screenshots%5Cauth%5C1%20signup%5C4%20%20signup%20success.jpg)
+### Event Created
+![Event Created](screenshots%5CEvents%5C1%20create%5C4%20event%20created.jpg)
+
+### Filter by Title
+![Filter by Title](screenshots%5CEvents%5C2%20read%20and%20filter%5C5%20%20filter%20by%20title%20result.jpg)
+
+### Event Title Update Successfully
+![Event Title Update Successfully](screenshots%5CEvents%5C3%20update%5Cevent%20title%20update%20successfully.jpg)
+### Delete Success
+![Delete Success](screenshots%5CEvents%5C4%20delete%5C4%20delete%20success.jpg)
+
