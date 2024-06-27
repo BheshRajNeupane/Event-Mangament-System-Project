@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
-                     }
+                     },
+                     credentials: 'include'
                 });
                 const res  = await response.json()
                 // Check if the response status is not OK

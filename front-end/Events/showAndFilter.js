@@ -36,7 +36,9 @@ async function fetchEvents(filter = {}) {
 
         console.log(url);
         // Fetch the filtered events from the API
-        const response = await fetch(url );
+        const response = await fetch(url ,{
+            credentials: 'include'
+        });
     
         if (!response.ok) {
             const err =  await response.json()
