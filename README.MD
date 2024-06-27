@@ -284,7 +284,6 @@ Ensures that new users can sign up with valid credentials.
 Tests the system's response to duplicate or invalid signup attempts.
 - **updateEvent.test.js:** Unit test for the event update route.
 
-Tests how the system handles invalid update data requests.
 
 ### Some screenshots shots (See screenshots of all  working functionalities of this project  in Screenshots Directory  )
 
