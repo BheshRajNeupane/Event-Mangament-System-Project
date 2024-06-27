@@ -287,7 +287,19 @@ Tests the system's response to duplicate or invalid signup attempts.
 Tests how the system handles invalid update data requests.
 
 ### Some screenshots shots (See screenshots of all  working functionalities of this project  in Screenshots Directory  )
-Home page
-![](..%5CScreenshot%20-%20Copy%5Chomepage.jpg)
-panel page
-![](..%5CScreenshot%20-%20Copy%5Cpanelpage.jpg)
+C:\Users\HP\Desktop\youngInnovations - Copy\screenshots\homepage.jpg
+
+C:\Users\HP\Desktop\youngInnovations - Copy\screenshots\panelpage.jpg
+
+C:\Users\HP\Desktop\youngInnovations - Copy\screenshots\auth\1 signup\4  signup success.jpg
+
+
+C:\Users\HP\Desktop\youngInnovations - Copy\screenshots\Events\1 create\4 event created.jpg
+
+C:\Users\HP\Desktop\youngInnovations - Copy\screenshots\Events\2 read and filter\7 result.jpg
+
+C:\Users\HP\Desktop\youngInnovations - Copy\screenshots\Events\2 read and filter\4 filter by title.png
+
+C:\Users\HP\Desktop\youngInnovations - Copy\screenshots\Events\3 update\event title update successfully.jpg
+
+C:\Users\HP\Desktop\youngInnovations - Copy\screenshots\Events\4 delete\4 delete success.jpg
