@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
          
           
             const res  = await response.json()
-      console.log(res);
+  
             // Check if the response status is not OK
             if(!response.ok){
             
                 alert(res.message)
                 return new Error(res.message)
             }
-            localStorage.setItem('authToken', res.token);
+           
             window.location.href = "http://127.0.0.1:5500/front-end/panel.html"
 
             // Parse the JSON response
